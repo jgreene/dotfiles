@@ -1,7 +1,9 @@
-cp -f ./.bashrc ~/.bashrc
-cp -f ./.dircolors ~/.dircolors
-cp -f ./.profile ~/.profile
-cp -f ./.tmux.conf ~/.tmux.conf
-cp -f ./.vimrc ~/.vimrc
-cp -fR ./.tmux ~/.tmux
-cp -fR ./.vim ~/.vim
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+DOTFILES_PATH=`pwd -P`
+pushd > /dev/null
+
+cd $DOTFILES_PATH
+
+cp -fr `find . -maxdepth 1 -not -iregex '.\|./.git' -iname '.*'` ~/
