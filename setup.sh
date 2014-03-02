@@ -9,4 +9,4 @@ cd $DOTFILES_PATH
 git submodule init
 git submodule update
 
-cp -fr `find . -maxdepth 1 -not -iregex '.\|./.git' -iname '.*'` ~/
+cp -fr `find . -maxdepth 1 -not -iregex '.\|./.git' -not -name '.gitmodules' -iname '.*'` ~/
